@@ -1,20 +1,17 @@
 
-function Page1(){
-  return <h1> Esta é a página 1 </h1>;
-}
+import { GlobalSyles } from "./GlobalSytles"
+import Home from "./pages/Home";
 
-function Page2(){
-  return <h1> Esta é a página 1 </h1>;
-}
 
 function App() {
-   let currentPage = 1;
 
   return (
-    <div className="App">
-       {currentPage === 1 ? <Page1/> : <Page2/>}yar
-    </div>
+    <>
+      <GlobalSyles/>
+      <Home />
+    </>
   );
+
 }
 
 export default App;
