@@ -4,14 +4,28 @@ import { FeedContainer, GistIcon, Main, Post } from "./styles";
 
 function Home() {
 
-    const posts = [
-        {
-            titulo: "Este é o titulo", descricao: "Esta é a descrição"
+    const posts = [{
+        author: {
+            name: "Fulano",
         },
-        {
-            titulo: "Este é o titulo 2", descricao: "Esta é a descrição 2"
-        },
-    ];
+        created_at: "10/10/2021",
+        title: "Este é um post sobre JS",
+        description: "JS é uma linguagem de programação muito top",
+        image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        gist: "https://github.com/SamuelGoulart",
+        categories: [
+            "JS", "Back-end", "Express"
+        ],
+        coments: [
+            {
+                author: {
+                    name: "Ciclano",
+                },
+                created_at: "11/10/2021",
+                description: "Realmente JS é muito legal",
+            }
+        ]
+    }];
 
     return (
         <>
@@ -31,7 +45,7 @@ function Home() {
     );
 }
 
-function PostCard(props) {
+function PostCard({ post }) {
 
     return (
         <Post>
@@ -39,29 +53,27 @@ function PostCard(props) {
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
                 <div>
                     <strong>
-                        por {props.post.titulo}
+                        por {post.author.name}
                     </strong>
                     <p>
-                        {props.post.descricao}
+                        {post.created_at}
                     </p>
                 </div>
-                <GistIcon />
+                {post.gist && <GistIcon />}
             </header>
             <main>
                 <div>
-                    <h1>Título</h1>
-                    <p>Descrição da postagem bla bla bla</p>
+                    <h1>{post.title}</h1>
+                    <p>{post.description}</p>
                 </div>
-                <img src="https://images.ecycle.com.br/wp-content/uploads/2021/05/20195924/o-que-e-paisagem.jpg.webp" />
+                <img src={post.image} />
                 <section>
-                    <p>Front-end</p>
-                    <p>CSS</p>
-                    <p>JS</p>
+                    {post.categories.map(category => <p>{category}</p>)}
                 </section>
             </main>
             <footer>
                 <h2>Comentários</h2>
-                <Coments />
+                {post.coments.map(coment => <Coments coment={coment} />)}
             </footer>
         </Post>
     );
