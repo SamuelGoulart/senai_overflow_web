@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Coments from "../../components/Coments";
 import { FeedContainer, GistIcon, Main, Post } from "./styles";
+import { Nav } from "../../components/Profile/styles";
 
 function Home() {
 
@@ -31,9 +32,8 @@ function Home() {
         <>
             <Header />
             <Main>
-                <nav>
-                    Profile
-                </nav>
+                <Nav>
+                </Nav>
                 <FeedContainer>
                     {posts.map(post => <PostCard post={post} />)}
                 </FeedContainer>
