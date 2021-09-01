@@ -18,4 +18,22 @@ export const GlobalSyles = createGlobalStyle`
           font-family: sans-serif, Ariel;
           color: textPrimary;
       }
+
+      button{
+          padding: 10px;
+          font-weight: bold;
+          background-color: transparent;
+          border: 2px solid var(--textPrimary);
+          color: var(--textPrimary);
+          transition: .2s;
+
+          :hover{
+              border: 2px solid var(--primary);
+              color: var(--primary);
+          }
+
+          :active{
+              transform: scale(0.95);
+          }
+      }
 `;
