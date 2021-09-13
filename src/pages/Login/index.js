@@ -2,8 +2,12 @@ import { Container, FormContainer } from "./styles";
 import Input from "../../components/Input";
 import { useState } from "react";
 import { api } from "../../services/api";
+import { signIn } from "../../services/security";
+import { useHistory, Link } from "react-router-dom";
 
 function Login() {
+
+    const history = useHistory();
 
     const [formLogin, setFormLogin] = useState({
         email: "",
@@ -24,7 +28,10 @@ function Login() {
                 password: formLogin.senha 
             });
 
-            console.log(response.data);
+            signIn(response.data);
+
+            history.push("/home")
+
         } catch (error) {
             console.log(error.response.data);
         }
@@ -38,6 +45,8 @@ function Login() {
                 <Input label="E-mail" type="email" id="email" handler={handleInput} required />
                 <Input label="Senha" type="password" id="senha" handler={handleInput} required />
                 <button>Entrar</button>
+                <Link to="/register" >Cadastre-se</Link>
+
             </FormContainer>
         </Container>
     );
