@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Senai Overflow Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Clone do projeto.
 
-## Available Scripts
+```bash
+git clone https://github.com/SamuelGoulart/senai_overflow_api
+```
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Istalação da pasta node_modules
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+```
+Criação do banco de dados
+```bash
+npx sequelize db:create
+```
+Criação das tabelas, com as migrations
+```bash
+npx sequelize db:migrate
+```
+Populando o banco de dados, com as seeders
 
-### `yarn test`
+<details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<summary>O que são seeders</summary>
 
-### `yarn build`
+ <br>
+ Os arquivos seeds servem para criar valores iniciais no banco de dados depois que ele é criado. 
+Normalmente usamos seeds para popular o banco com dados que são importantes para a 
+aplicação funcionar em qualquer ambiente, ou para finalidade de teste.
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npx sequelize db:seed:all
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Informações úteis sobre o projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
 
-### `yarn eject`
+<summary>Todos as dependências instalados no projeto </summary>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ #### Observação: 
+ Fazendo o clone do projeto não precisa rodar esses comandos abaixo, somente da seção do clone do projeto
+ #### Observação:
+ Todas as dependências instalado no projeto, pode ser encontrado no arquivo package.json
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ### Lista das dependências instalado no projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instalação do express 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ ```bash
+npm install express nodemon
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ Express.js é um mini framework para Node.js que fornece recursos para o desenvolvimento de aplicações back-end.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  O Express oferece soluções para: Gerenciar requisições de diferentes verbos HTTP em diferentes URLs.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
